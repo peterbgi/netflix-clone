@@ -6,6 +6,9 @@ import Player from './components/pages/Player/Player'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase'
 
+import  {  ToastContainer ,  toast  }  from  'react-toastify' ; 
+import  'react-toastify/dist/ReactToastify.css' ;
+
 
 const App = () => {
 
@@ -14,10 +17,8 @@ const App = () => {
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        console.log("Belépés")
         navigate('/')
       }else {
-        console.log("Kilépés")
         navigate('/login')
       }
     })
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <div>
+      <ToastContainer theme='dark' />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />

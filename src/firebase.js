@@ -25,7 +25,7 @@ const signup = async (name, email, password) => {
 
        const user = res.user
 
-       await addDoc(collection(db, 'user'), {
+       await addDoc(collection(db, "user"), {
         uid: user.uid,
         name,
         authProvider: "local",
@@ -41,7 +41,7 @@ const signup = async (name, email, password) => {
 
 const login = async (email, password) => {
     try {
-        signInWithEmailAndPassword(auth, email, password)
+     signInWithEmailAndPassword(auth, email, password)
         
  
        
