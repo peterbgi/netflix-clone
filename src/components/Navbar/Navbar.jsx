@@ -5,6 +5,7 @@ import search_icon from '../../assets/search_icon.svg'
 import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
+import { logout } from '../../firebase'
 
 const Navbar = () => {
 const navRef = useRef();
@@ -44,7 +45,9 @@ useEffect(() => {
         <img src={profile_img} alt="profil" className='icons' />
         <img src={caret_icon}/>
         <div className="dropdown">
-          <p>Kilépés</p>
+          <p
+          onClick={() => {logout()}}
+          >Kilépés</p>
           </div>
         </div>
       </div>

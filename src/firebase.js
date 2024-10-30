@@ -41,7 +41,7 @@ const signup = async (name, email, password) => {
 
 const login = async (email, password) => {
     try {
-        signInWithEmailAndPassword(auth, email. password)
+        signInWithEmailAndPassword(auth, email, password)
         
  
        
